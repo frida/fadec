@@ -11,6 +11,9 @@ if not py_version.version_compare('>=3.6')
 endif
 
 cc = meson.get_compiler('c')
+if meson.is_subproject() and cc.get_argument_syntax() != 'msvc'
+  add_project_arguments('-w', language: 'c')
+endif
 if cc.has_argument('-fstrict-aliasing')
   add_project_arguments('-fstrict-aliasing', language: 'c')
 endif
