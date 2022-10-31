@@ -546,9 +546,9 @@ def decode_table(entries, args):
                         .lower() for m in mnems]
     mnemonics_str = superstring(mnemonics_intel)
 
-    print(f"Stats: Descs -- {len(descs)} ({8*len(descs)} bytes);",
-          f"Trie -- {2*len(table_data)} bytes, {trie.stats};"
-          f"Mnems -- {len(mnemonics_str)} + {3*len(mnemonics_intel)} bytes")
+    #print(f"Stats: Descs -- {len(descs)} ({8*len(descs)} bytes);",
+    #      f"Trie -- {2*len(table_data)} bytes, {trie.stats};"
+    #      f"Mnems -- {len(mnemonics_str)} + {3*len(mnemonics_intel)} bytes")
 
     defines = ["FD_TABLE_OFFSET_%d %d\n"%k for k in zip(modes, root_offsets)]
 
